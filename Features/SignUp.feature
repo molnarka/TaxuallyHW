@@ -6,7 +6,8 @@ Testing the Sign up flow
 Scenario: Select only one country
 	Given Logged in with test user
 	Then Sign up page displayed
-	When Selected countries '1'
+	When Set Where is your business loacated to 'Hungary'
+	And Select random primary countries '3'
 	And Click all Get VAT number buttons
 	And Click Next step button
 	Then Business details page displayed
