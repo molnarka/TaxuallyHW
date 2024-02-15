@@ -8,7 +8,7 @@
         public FinalizeSignUpSteps(IObjectContainer container)
         {
             var page = container.Resolve<IPage>();
-            _finalizeSignUpPage = new FinalizeSignUpPage(page);
+            _finalizeSignUpPage = new(page);
         }
 
         #region WHEN
@@ -31,8 +31,8 @@
             await _finalizeSignUpPage.ClickAllGetVATNumberButtons();
         }
 
-        [When(@"Click Next step button")]
-        public async Task WhenClickNextStepButton()
+        [When(@"Click Next step button on Sign up")]
+        public async Task WhenClickNextStepButtonOnSignUp()
         {
             await _finalizeSignUpPage.ClickNextStepButton();
         }

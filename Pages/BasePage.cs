@@ -19,5 +19,10 @@
         {
             return _page.Url;
         }
+
+        public async Task Wait5Seconds()
+        {
+            await _page.WaitForTimeoutAsync(5000);
+        }
     }
 }

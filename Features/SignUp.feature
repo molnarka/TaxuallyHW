@@ -9,7 +9,7 @@ Scenario: Select only one country
 	When Set Where is your business loacated to 'Hungary'
 	And Select random primary countries '3'
 	And Click all Get VAT number buttons
-	And Click Next step button
+	And Click Next step button on Sign up
 	Then Business details page displayed
 	When Set Legal status to 'Company'
 	And Set Full legal name
@@ -20,5 +20,6 @@ Scenario: Select only one country
 	And Set random City
 	And Set random Street
 	And Set random House number
-	And Click Next step button
+	And Click Next step button on Business details
+	Then Wait 5 seconds to see the result
 
