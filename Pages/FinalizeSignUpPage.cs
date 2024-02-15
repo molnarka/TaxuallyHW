@@ -5,6 +5,7 @@
         #region UI Elements
 
         private ILocator whereYourBusinessLocatedSelect => _page.Locator("[data-unique-id='registration-flow-subscription_select-country-establishment']");
+        private ILocator whereYourBusinessLocatedInput => whereYourBusinessLocatedSelect.Locator("xpath=//input");
         private ILocator countriesDropDownList => _page.Locator("[aria-label='Options list']");
         private ILocator primaryCountriesPanel => _page.Locator("xpath=//div[@class='accordionOpen']//div[@class='row'][1]");
         private ILocator primaryCountriesButtons => primaryCountriesPanel.Locator("css=button");
@@ -28,9 +29,7 @@
 
         public async Task SetBusinessLocation(string country)
         {
-            await whereYourBusinessLocatedSelect.ClickAsync();
-            await countriesDropDownList.HoverAsync();
-            await countriesDropDownList.GetByExactText(country).ScrollIntoViewIfNeededAsync();
+            await whereYourBusinessLocatedInput.FillAsync(country);
             await countriesDropDownList.GetByExactText(country).ClickAsync();
         }
 

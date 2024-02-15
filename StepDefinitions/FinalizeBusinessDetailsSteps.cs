@@ -86,7 +86,7 @@
         [Then(@"Wait 5 seconds to see the result")]
         public async Task ThenWait5Seconds()
         {
-            await _finalizeBusinessDetailsPage.BusinessDetailsPageNeedsToBeDisplayed();
+            await _finalizeBusinessDetailsPage.Wait5Seconds();
         }
 
         #endregion

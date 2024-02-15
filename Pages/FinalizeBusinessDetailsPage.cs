@@ -5,6 +5,7 @@
         #region UI Elements
 
         private ILocator legalStatusSelect => _page.Locator("#companyLegalStatus");
+        private ILocator legalStatusDropDownList => _page.Locator("[aria-label='Options list']");
         private ILocator companyLegalNameInput => _page.Locator("#companyLegalNameOfBusiness");
         private ILocator incorporationNumberInput => _page.Locator("#companyRegistrationNumber");
         private ILocator incorporationDatePickerButton => _page.Locator("[data-unique-id='registration-flow-company-info_button-toggle-datepicker']");
@@ -33,6 +34,7 @@
         public async Task SetLegalStatus(string status)
         {
             await legalStatusSelect.FillAsync(status);
+            await legalStatusDropDownList.GetByExactText(status).ClickAsync();
         }
 
         public async Task SetCompanyLegalName()

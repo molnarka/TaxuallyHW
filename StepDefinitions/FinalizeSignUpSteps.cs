@@ -45,6 +45,8 @@
         public async Task ThenSignUpPageDisplayed()
         {
             await _finalizeSignUpPage.SignUpPageNeedsToBeDisplayed();
+            await _finalizeSignUpPage.NavigateToPage(); //forece reload the page with the URL
+            await _finalizeSignUpPage.SignUpPageNeedsToBeDisplayed();
         }
 
         #endregion

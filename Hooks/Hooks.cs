@@ -34,7 +34,7 @@ namespace TaxuallyHW.Hooks
             var browser = await playwright.Chromium.LaunchAsync(browserTypeLaunchOptions);
             var context = await browser.NewContextAsync(new BrowserNewContextOptions()
             {
-                ViewportSize = new ViewportSize() { Width = 1920, Height = 1080 },
+                ViewportSize = new ViewportSize() { Width = 1800, Height = 900 },
             });
             var page = await context.NewPageAsync();
             container.RegisterInstanceAs(playwright);
