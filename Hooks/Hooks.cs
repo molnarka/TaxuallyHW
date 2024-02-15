@@ -6,7 +6,6 @@ namespace TaxuallyHW.Hooks
     [Binding]
     public class TestHooks
     {
-
         [BeforeScenario]
         public async Task BeforeScenarios(IObjectContainer container)
         {
@@ -60,4 +59,3 @@ namespace TaxuallyHW.Hooks
         }
     }
 }
-

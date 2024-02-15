@@ -22,4 +22,3 @@ Scenario: Select only one country
 	And Set random House number
 	And Click Next step button on Business details
 	Then Wait 5 seconds to see the result
-
